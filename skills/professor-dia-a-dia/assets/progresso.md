@@ -3,6 +3,7 @@ curso: professor-dia-a-dia
 versao_curriculo: 1
 aluno: ""
 sistema: ""
+raiz: ""
 repositorio: ""
 iniciado_em: AAAA-MM-DD
 ultima_atualizacao: AAAA-MM-DD

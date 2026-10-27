@@ -34,6 +34,7 @@ para o aluno.
 | `versao_curriculo` | `1` | versão do `curriculo.md` usada |
 | `aluno` | nome ou vazio | do `git config user.name`, se existir |
 | `sistema` | `windows`, `linux`, `macos` | define os comandos mostrados |
+| `raiz` | caminho absoluto | pasta onde o curso foi criado; mostrado ao aluno para detectar pasta errada |
 | `repositorio` | URL do GitHub ou vazio | preenchido na aula `M00-A02`; vazio = ainda sem remoto |
 | `iniciado_em` | `AAAA-MM-DD` | |
 | `ultima_atualizacao` | `AAAA-MM-DD` | atualize a cada `/curso` |

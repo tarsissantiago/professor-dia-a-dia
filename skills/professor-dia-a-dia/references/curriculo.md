@@ -29,7 +29,7 @@ parte que contém o conceito novo (ex.: o primeiro endpoint com `DbContext` na m
 
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
-| M00-A01 | O que é programar e o que vamos construir | Git instalado e configurado (`user.name`, `user.email`); pasta do projeto com `git init -b main`; `.gitignore` do .NET (`dotnet new gitignore`); primeiro commit | `git log` mostra o commit inicial; `.gitignore` existe |
+| M00-A01 | O que é programar e o que vamos construir | Git instalado e configurado (`user.name`, `user.email`); **primeiro passo:** conferir a pasta (`pwd`), `git init -b main` e commit do `curso/` que o professor acabou de criar; depois `.gitignore` do .NET (`dotnet new gitignore`) e novo commit | `git log` mostra o commit inicial; `.gitignore` existe |
 | M00-A02 | GitHub: seu código na nuvem | Conta no GitHub; repositório remoto vazio criado no site; `git remote add origin` e `git push -u origin main` | `git remote -v` mostra `origin`; `git status` diz que está em dia com `origin/main` |
 | M00-A03 | Instalando o .NET e o primeiro "Olá" | `src/LabStore.Console` criado com `dotnet new console` imprimindo uma mensagem; commit por passo e push no fim | `dotnet run --project src/LabStore.Console` imprime a mensagem; commits da aula no `origin` |
 | M00-A04 | Terminal e Git sem medo | Navegar pastas no terminal; `git status`, `git diff`, `git log --oneline`; desfazer uma mudança com `git restore` | Aluno escreve `curso/anotacoes-git.md` com os comandos e para que serve cada um; commit e push feitos |

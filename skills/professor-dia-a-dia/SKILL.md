@@ -52,15 +52,32 @@ revisão do código gerado.
 
 Raiz = `git rev-parse --show-toplevel` ou a pasta atual. Arquivos de controle em `<raiz>/curso/`.
 Detecte o sistema (Windows/PowerShell ou Linux/macOS) e use comandos compatíveis. Registre em `sistema:`.
+Registre o caminho absoluto da raiz em `raiz:` e **mostre esse caminho** sempre que criar ou recriar o `curso/`
+("Vou montar o curso em `C:\Users\...\LabStore`"), para o aluno perceber na hora se a ferramenta abriu a pasta errada.
 Se o aluno escreveu algo junto com o comando (ex.: `/curso pular`, uma dúvida), trate isso primeiro.
+
+**Antes de escolher o caso, confira se o curso sumiu.** Sem `curso/progresso.md`, mas:
+
+- **O git tem histórico do `curso/`** (`git log --oneline -- curso/` não vazio): restaure com
+  `git checkout HEAD -- curso/` (ou do último commit que o contém), diga ao aluno que o curso foi recuperado do Git e
+  siga o caso do estado restaurado. Aproveite para mostrar, em uma frase, que essa é exatamente a rede de segurança
+  que o Git dá.
+- **Há sinais de que o curso já tinha começado** (existe `AGENTS.md`, `src/LabStore.*`, `curso/aulas/` ou
+  `curso/avaliacoes/` sem o progresso): trate como o Caso B, recriando o progresso a partir do que existe, e avise
+  com clareza o que foi recriado e onde (`raiz`).
+- Em ambos, diga as causas comuns em uma linha cada, sem alarde: a ferramenta foi aberta em outra pasta (compare com
+  o caminho mostrado), a pasta está sincronizada com OneDrive/Dropbox, ou o projeto foi copiado sem as pastas.
+  Não afirme que o aluno apagou nada.
 
 ### 2. Leia `curso/progresso.md` e escolha o caso
 
 **Caso A — sem `curso/progresso.md`, repositório vazio** (só `.git`, `README`, `.gitignore` ou nada):
 
 1. Apresente-se e apresente o projeto (roteiro em `references/metodo.md`), incluindo como o curso usa o agente e que dá para pular aulas.
-2. Crie `curso/progresso.md` (de `assets/progresso.md`), `curso/aulas/`, `curso/prompts/` e `curso/avaliacoes/`.
-3. Gere a primeira aula (`M00-A01`), salve e apresente.
+2. Crie `curso/progresso.md` (de `assets/progresso.md`), `curso/aulas/`, `curso/prompts/` e `curso/avaliacoes/`,
+   mostrando o caminho da raiz.
+3. Gere a primeira aula (`M00-A01`), salve e apresente. Até o primeiro commit, o `curso/` não tem proteção nenhuma:
+   por isso o primeiro passo da M00-A01 é sempre `git init` + commit incluindo o `curso/`, antes de qualquer outra coisa.
 
 **Caso B — sem `curso/progresso.md`, mas com código:**
 
