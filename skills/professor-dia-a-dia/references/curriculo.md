@@ -15,9 +15,10 @@ a partir do Módulo 3, Docker.
 
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
-| M00-A01 | O que é programar e o que vamos construir | Pasta do projeto com `git init`, `.gitignore` do .NET (`dotnet new gitignore`) | `git status` funciona; `.gitignore` existe |
-| M00-A02 | Instalando o .NET e o primeiro "Olá" | `src/LabStore.Console` criado com `dotnet new console` imprimindo uma mensagem | `dotnet run --project src/LabStore.Console` imprime a mensagem |
-| M00-A03 | Terminal e Git sem medo | Primeiro commit com mensagem descritiva | `git log` mostra ao menos 1 commit |
+| M00-A01 | O que é programar e o que vamos construir | Git instalado e configurado (`user.name`, `user.email`); pasta do projeto com `git init -b main`; `.gitignore` do .NET (`dotnet new gitignore`); primeiro commit | `git log` mostra o commit inicial; `.gitignore` existe |
+| M00-A02 | GitHub: seu código na nuvem | Conta no GitHub; repositório remoto vazio criado no site; `git remote add origin` e `git push -u origin main` | `git remote -v` mostra `origin`; `git status` diz que está em dia com `origin/main` |
+| M00-A03 | Instalando o .NET e o primeiro "Olá" | `src/LabStore.Console` criado com `dotnet new console` imprimindo uma mensagem; commit por passo e push no fim | `dotnet run --project src/LabStore.Console` imprime a mensagem; commits da aula no `origin` |
+| M00-A04 | Terminal e Git sem medo | Navegar pastas no terminal; `git status`, `git diff`, `git log --oneline`; desfazer uma mudança com `git restore` | Aluno escreve `curso/anotacoes-git.md` com os comandos e para que serve cada um; commit e push feitos |
 
 ## Módulo 1 — C# essencial, usando a loja como exemplo
 

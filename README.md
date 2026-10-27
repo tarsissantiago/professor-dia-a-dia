@@ -15,6 +15,8 @@ aberto [Agent Skills](https://agentskills.io) (`SKILL.md`).
   onde você parou. Repositório vazio? Ele se apresenta e começa a primeira aula.
 - **Ele confere de verdade.** Ao rodar `/curso` de novo, o professor verifica o checkpoint da aula (compila, roda,
   chama a API) antes de liberar a próxima.
+- **Git e GitHub desde o primeiro dia.** O Módulo 0 cria o repositório e faz o primeiro push. Depois, cada passo da
+  aula vira um commit e cada aula termina com `git push`: o professor só fecha a aula com o código no GitHub.
 - **Avaliação no fim de cada módulo**, num arquivo que você responde com suas palavras. O professor corrige ali
   mesmo, com feedback embaixo de cada resposta, e ajusta o ritmo: se precisar, passa uma aula de reforço.
 - **Tudo fica no seu repositório**, na pasta `curso/`:
@@ -30,7 +32,7 @@ curso/
 
 | Módulo | Assunto |
 | --- | --- |
-| 0 | Ambiente, terminal, Git e o primeiro programa |
+| 0 | Ambiente, terminal, Git, GitHub e o primeiro programa |
 | 1 | C# essencial (tipos, classes, listas, LINQ, exceções, async) |
 | 2 | HTTP, REST e a primeira API com Swagger |
 | 3 | Banco de dados com PostgreSQL e Entity Framework Core |
@@ -101,9 +103,10 @@ o comando `/curso` da pasta `integrations/` da sua ferramenta.
 
 1. Abra a pasta do projeto na sua ferramenta.
 2. Digite **`/curso`**.
-3. Siga a aula, faça o commit e digite **`/curso`** de novo. Repita todo dia um pouquinho.
+3. Siga a aula, fazendo um commit a cada passo e o `git push` no fim, e digite **`/curso`** de novo.
+   Repita todo dia um pouquinho.
 
-Dica: faça commit da pasta `curso/` também. Ela é a memória do curso e permite continuar em outra máquina.
+A pasta `curso/` vai para o GitHub junto com o código. Ela é a memória do curso e permite continuar em outra máquina.
 
 ## Estrutura do repositório
 

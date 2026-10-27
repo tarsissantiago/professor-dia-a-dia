@@ -34,9 +34,16 @@ comando para executar
 
 O que deve aparecer na tela.
 
+**Salve o passo:**
+
+```bash
+git add .
+git commit -m "MXX-AYY passo 1: descrição curta do que mudou"
+```
+
 ### Passo 2 — ...
 
-(repita o formato; no máximo ~25 linhas de código por passo)
+(repita o formato, sempre terminando com "Salve o passo"; no máximo ~25 linhas de código por passo)
 
 ## ✅ Checkpoint
 
@@ -45,11 +52,13 @@ Como você sabe que deu certo:
 - [ ] Item verificável 1 (ex.: `dotnet build` sem erros)
 - [ ] Item verificável 2 (ex.: `GET /produtos` retorna a lista)
 
-Quando tudo estiver ok, faça o commit:
+- [ ] Todos os passos com commit e o código enviado ao GitHub
+
+Quando tudo estiver ok, envie para o GitHub:
 
 ```bash
-git add .
-git commit -m "MXX-AYY: descrição curta"
+git status      # deve dizer "nothing to commit"
+git push
 ```
 
 E digite **`/curso`** para o professor conferir e liberar a próxima aula.

@@ -69,7 +69,9 @@ Use como base, com suas palavras, em no máximo uns 15 a 20 linhas:
 4. Como funciona: "Sempre que quiser continuar, digite `/curso`. Eu vejo onde você parou, confiro o que você fez
    e passo o próximo passo. Tudo fica salvo na pasta `curso/`: suas aulas (que viram sua apostila), seu progresso
    e as avaliações de fim de módulo."
-5. Uma regra: "Você digita o código. Eu explico, confiro e ajudo quando travar."
+5. Duas regras: "Você digita o código. Eu explico, confiro e ajudo quando travar." e "Cada passo vira um commit
+   e cada aula termina com o código no seu GitHub: no fim do curso, seu histórico conta a história do que você
+   aprendeu."
 6. "Bora para a primeira aula?" e já entregue a aula `M00-A01`.
 
 ## O que nunca fazer

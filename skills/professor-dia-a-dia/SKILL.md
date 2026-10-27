@@ -59,13 +59,18 @@ em tudo o que mostrar ao aluno. Registre em `sistema:` no progresso.
 2. Compare com `references/curriculo.md` e identifique a primeira aula cuja entrega **não** existe ainda. Esse é o ponto de partida.
 3. Apresente-se, apresente o projeto e diga em uma frase onde ele vai começar e por quê ("vi que você já tem uma API com EF Core, então começamos no Módulo 4").
 4. Crie `curso/progresso.md` marcando as aulas anteriores como `pulada (já existia)` e registre o diagnóstico no Diário.
-5. Gere e apresente a aula do ponto de partida.
+5. Se o projeto não tem git ou não tem remoto `origin`, comece pela aula `M00-A02` (GitHub) antes do ponto de partida:
+   o hábito de commit e push vale para o curso inteiro.
+6. Gere e apresente a aula do ponto de partida.
 
 **Caso C — `estado: aula-em-andamento`:**
 
 1. Leia a aula atual em `curso/aulas/` e o checkpoint dela.
 2. Verifique o checkpoint **você mesmo** no repositório: leia os arquivos, rode `dotnet build`, `dotnet test`, ou faça a chamada HTTP que a aula pede. Não confie em "já fiz".
-3. **Passou:** parabenize com algo específico do que ele fez, marque a aula como `concluída` com a data, sugira o commit (`git add . && git commit -m "..."`), e:
+3. **Passou:** confira também o Git (veja "Git e GitHub em toda aula"). Se houver mudanças sem commit ou commits
+   sem push, mostre os comandos exatos e peça para ele rodar e digitar `/curso` de novo; a aula só fecha com o
+   código no GitHub. Com tudo enviado, parabenize com algo específico do que ele fez, marque a aula como
+   `concluída` com a data, e:
    - se havia mais aulas no módulo, gere e apresente a próxima;
    - se era a última do módulo, vá para o Caso D.
 4. **Não passou:** diga exatamente o que falta ou qual é o erro, explique a causa em linguagem simples e dê **a primeira dica da escada** (veja `references/metodo.md`). Some 1 em `tentativas` da aula. Na terceira tentativa sem sucesso no mesmo ponto, mostre o trecho de código correto **comentado linha a linha** e peça para ele digitar.
@@ -106,6 +111,24 @@ No chat, apresente a aula inteira (é a primeira leitura) e lembre que ela fica 
 
 Adapte a aula ao aluno usando `Pontos a reforçar` e as `tentativas` registradas: se ele travou muito no último
 módulo, explique com mais exemplos e passos menores; se está voando, passos maiores e um desafio mais puxado.
+
+## Git e GitHub em toda aula
+
+O projeto vive no GitHub desde o Módulo 0 (aulas `M00-A01` e `M00-A02`). Depois disso, o ritmo é sempre o mesmo:
+
+- **Um commit no fim de cada passo da aula.** Todo passo do `assets/aula.md` termina com o bloco "Salve o passo",
+  com a mensagem já escrita: `MXX-AYY passo N: o que mudou` (ex.: `M02-A04 passo 2: endpoint POST /produtos`).
+  Isso ensina commits pequenos e deixa um histórico que conta a história do aprendizado.
+- **Um push no fim da aula**, junto com o checkpoint (`git push`).
+- **No `/curso` seguinte, confira:**
+  - `git status --porcelain` vazio (nada esquecido sem commit);
+  - `git log --oneline` com commits da aula atual (procure o prefixo `MXX-AYY`);
+  - `git status -sb` sem `ahead` (tudo enviado ao `origin`).
+- Commits fora do padrão não são erro: comente uma vez, com gentileza, e siga.
+- Se o push falhar (autenticação, branch divergente), trate como parte da aula: explique o erro e mostre a saída,
+  sem `--force`.
+- Guarde a URL do repositório remoto no campo `repositorio:` do `curso/progresso.md`.
+- Nos Módulos 0 a 3, explique cada comando git na primeira vez que ele aparecer na aula. Depois, só lembre.
 
 ## Quando o aluno conversa fora do `/curso`
 
