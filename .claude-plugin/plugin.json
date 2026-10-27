@@ -1,6 +1,6 @@
 {
   "name": "professor-dia-a-dia",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Professor particular de programação .NET: ensina construindo a API LabStore do zero, aula por aula, com progresso e avaliações salvos no repositório. Comando /curso.",
   "author": {
     "name": "Társis Santiago de Oliveira"

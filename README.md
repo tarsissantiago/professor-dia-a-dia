@@ -4,13 +4,27 @@ Um professor particular de programação que mora dentro do seu editor. Você di
 C# e .NET **construindo um projeto real** do zero: a **LabStore**, uma API de loja que começa com um "Olá, mundo" e
 termina com banco de dados, testes, cache, filas, busca e inteligência artificial.
 
+E ensina a programar do jeito de hoje: **com um agente de IA**. Você começa digitando na mão para criar base e, aos
+poucos, o agente passa a digitar enquanto você aprende a **pedir, conferir e responder pelo código**.
+
 Funciona com **Antigravity, Claude Code, Codex, Cursor, Gemini CLI** e qualquer ferramenta compatível com o padrão
 aberto [Agent Skills](https://agentskills.io) (`SKILL.md`).
 
 ## Como funciona
 
-- **Você digita, ele ensina.** Cada aula explica o problema, a ideia (com analogia) e o código para você digitar,
-  passo a passo. Ele não escreve o projeto por você.
+- **Da mão para o agente.** Cada aula explica o problema e a ideia (com analogia). Depois depende da fase:
+
+  | Módulos | Como você programa |
+  | --- | --- |
+  | 0 a 2 | ✍️ Na mão: você digita tudo, o agente só tira dúvida |
+  | 3 a 5 | ✍️ + 🤖 O conceito novo na mão, o resto você pede ao agente |
+  | 6 a 13 | 🤖 O agente digita; você escreve o pedido, confere e explica o código |
+
+- **O professor revisa você, não só o código.** Ele revisa seu pedido antes de você mandar ao agente, confere o que
+  o agente gerou e deixa perguntas sobre aquele código ("por que o agente usou `async` aqui?"). Se você não souber
+  explicar, a aula não fecha. De vez em quando aparece uma pegadinha para treinar a desconfiança.
+- **Seu `AGENTS.md`.** Você cria e vai enriquecendo o arquivo de regras que o agente segue no projeto.
+- **O professor nunca escreve o código do projeto.** Na mão é você; com o agente, é o agente que você conduziu.
 - **Sem perguntas chatas no começo.** O `/curso` olha o seu repositório e o arquivo de progresso e sabe exatamente
   onde você parou. Repositório vazio? Ele se apresenta e começa a primeira aula.
 - **Ele confere de verdade.** Ao rodar `/curso` de novo, o professor verifica o checkpoint da aula (compila, roda,
@@ -27,6 +41,7 @@ aberto [Agent Skills](https://agentskills.io) (`SKILL.md`).
 curso/
 ├── progresso.md        # onde você está, notas, pontos fortes e a reforçar
 ├── aulas/              # cada aula salva: no fim, é a sua apostila
+├── prompts/            # seus pedidos ao agente, revisões e respostas: seu portfólio de como conduz uma IA
 └── avaliacoes/         # provas de fim de módulo com o feedback do professor
 ```
 
@@ -34,7 +49,7 @@ curso/
 
 | Módulo | Assunto |
 | --- | --- |
-| 0 | Ambiente, terminal, Git, GitHub e o primeiro programa |
+| 0 | Ambiente, terminal, Git, GitHub, o primeiro programa e como programar com um agente |
 | 1 | C# essencial (tipos, classes, listas, LINQ, exceções, async) |
 | 2 | HTTP, REST e a primeira API com Swagger |
 | 3 | Banco de dados com PostgreSQL e Entity Framework Core |

@@ -9,11 +9,17 @@ curso/
 ├── aulas/                    # a apostila do aluno, uma aula por arquivo
 │   ├── M00-A01-o-que-e-programar.md
 │   └── ...
+├── prompts/                  # pedidos ao agente, revisões e respostas (um por aula com parte 🤖)
+│   ├── M00-A05.md
+│   └── ...
 ├── avaliacoes/               # provas de fim de módulo + feedback
 │   ├── modulo-00.md
 │   └── ...
 └── anotacoes-*.md            # textos que o próprio aluno escreve em algumas aulas
 ```
+
+Fora de `curso/`, na raiz do projeto, fica o `AGENTS.md` (modelo em `assets/AGENTS.md`), criado na aula `M00-A05`.
+Ele é do aluno: o professor sugere, o aluno escreve.
 
 ## `curso/progresso.md`
 
@@ -33,6 +39,8 @@ para o aluno.
 | `ultima_atualizacao` | `AAAA-MM-DD` | atualize a cada `/curso` |
 | `modulo_atual` | número | |
 | `aula_atual` | ID, ex. `M02-A03` ou `M02-R1` | |
+| `modo` | `mao`, `misto`, `agente` | modo do módulo atual (ou da aula, se ela sobrescrever) |
+| `etapa` | `mao`, `pedir`, `executar`, `revisar` | onde o aluno está dentro da aula (veja "Etapas da aula" no `SKILL.md`) |
 | `estado` | `aula-em-andamento`, `avaliacao-pendente`, `questionario-pulo`, `reforco`, `concluido` | escolhe o caso no `SKILL.md` |
 
 ### Corpo
@@ -54,6 +62,13 @@ para o aluno.
 Modelo em `assets/aula.md`. Nome em minúsculas, sem acento, com hífens. Aula de reforço: `MXX-R1-...`.
 Uma vez gerada, a aula **não é reescrita** (é a apostila). Correções vão numa seção `Nota do professor` no fim.
 
+## Pedido ao agente — `curso/prompts/MXX-AYY.md`
+
+Modelo em `assets/pedido.md`. Criado pelo professor ao gerar uma aula com parte 🤖, com o **Contexto da aula**
+preenchido e **Meu pedido** vazio. Depois, o professor acrescenta (nunca reescreve o que o aluno escreveu):
+"Revisão do professor do pedido" na etapa `pedir`; "Perguntas de revisão do código" e "Ajustes a pedir ao agente"
+quando o checkpoint passa; "Feedback do professor" na etapa `revisar`. Critérios em `programando-com-agente.md`.
+
 ## Questionário de pulo — `curso/avaliacoes/MXX-AYY-pulo.md`
 
 Mesmo modelo e mesmas regras de correção da avaliação de módulo, só que menor: 3 ou 4 perguntas da aula pulada,
@@ -71,7 +86,12 @@ Modelo em `assets/avaliacao.md`.
   - **Situação:** "A API retorna 500 quando o produto não existe. O que deveria retornar e por quê?"
   - **Prática no projeto (1 por avaliação):** uma pequena mudança no repositório, ex.: "crie o endpoint
     `GET /produtos/mais-caros` que retorna os 5 produtos mais caros". O professor verifica no código.
+  - **Explique o código gerado** (módulos `misto` e `agente`): um trecho real do repositório escrito pelo agente;
+    "explique o que faz e por quê".
+  - **Revise** (módulos `misto` e `agente`): um trecho com um problema plantado na própria avaliação; "o que você
+    pediria para o agente corrigir e como escreveria esse pedido?".
 - Inclua 1 pergunta que revisita um item de `Pontos a reforçar` de módulos anteriores, se houver.
+- A prática pode ser feita com o agente nos módulos `agente`, mas as perguntas escritas são respondidas sem ele.
 - Nada de múltipla escolha: o aluno sempre escreve com as próprias palavras.
 - Cada pergunta vale pontos (total 100). Prática vale mais (20 a 30).
 

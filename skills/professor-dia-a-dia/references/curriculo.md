@@ -6,12 +6,26 @@ com o aluno: começa num arquivo só, "feio de propósito", e é reorganizado qu
 Cada aula tem um **ID** (`MXX-AYY`), uma **entrega** (o que passa a existir no repositório) e um **checkpoint**
 (como o professor confirma, sozinho, que a entrega funciona). Use o checkpoint literalmente no Caso C do `SKILL.md`.
 
-Pré-requisitos instalados ao longo do Módulo 0: .NET SDK (LTS), Git, um editor (Antigravity, VS Code ou similar) e,
-a partir do Módulo 3, Docker.
+Pré-requisitos instalados ao longo do Módulo 0: .NET SDK (LTS), Git, conta no GitHub, um editor com agente de IA
+(Antigravity, Claude Code, Codex, Cursor ou similar) e, a partir do Módulo 3, Docker.
+
+## Modo de cada módulo: da mão para o agente
+
+| Módulos | Modo | Como funciona |
+| --- | --- | --- |
+| 0 a 2 | `mao` | O aluno digita tudo. O agente só é usado para tirar dúvida e explicar código (a partir da `M00-A05`). |
+| 3 a 5 | `misto` | A primeira vez de cada conceito é na mão (parte ✍️); o resto da entrega é pedido ao agente (parte 🤖). |
+| 6 a 13 | `agente` | O agente escreve; o aluno especifica no pedido, confere, revisa e responde pelo código. |
+
+Uma aula pode sobrescrever o modo do módulo quando a tabela indicar (coluna **Modo**, quando presente).
+Em aulas `misto`, a coluna **Entrega** descreve a entrega completa; a aula decide qual parte é ✍️: sempre a menor
+parte que contém o conceito novo (ex.: o primeiro endpoint com `DbContext` na mão; os outros três pelo agente).
 
 ---
 
 ## Módulo 0 — Ambiente e primeiro programa
+
+**Modo:** `mao`
 
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
@@ -19,8 +33,11 @@ a partir do Módulo 3, Docker.
 | M00-A02 | GitHub: seu código na nuvem | Conta no GitHub; repositório remoto vazio criado no site; `git remote add origin` e `git push -u origin main` | `git remote -v` mostra `origin`; `git status` diz que está em dia com `origin/main` |
 | M00-A03 | Instalando o .NET e o primeiro "Olá" | `src/LabStore.Console` criado com `dotnet new console` imprimindo uma mensagem; commit por passo e push no fim | `dotnet run --project src/LabStore.Console` imprime a mensagem; commits da aula no `origin` |
 | M00-A04 | Terminal e Git sem medo | Navegar pastas no terminal; `git status`, `git diff`, `git log --oneline`; desfazer uma mudança com `git restore` | Aluno escreve `curso/anotacoes-git.md` com os comandos e para que serve cada um; commit e push feitos |
+| M00-A05 | Programando com um agente de IA | O que um agente faz e não faz; `AGENTS.md` criado a partir do modelo e personalizado pelo aluno; primeiro pedido em `curso/prompts/M00-A05.md`: pedir ao agente para explicar o `Program.cs` e acrescentar uma segunda mensagem; aluno roda, lê o diff e desfaz com `git restore` para ver a rede de segurança funcionando; depois refaz e faz o commit | `AGENTS.md` na raiz com as seções preenchidas; pedido e respostas de revisão no arquivo; commit `M00-A05` no `origin` |
 
 ## Módulo 1 — C# essencial, usando a loja como exemplo
+
+**Modo:** `mao`
 
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
@@ -33,6 +50,8 @@ a partir do Módulo 3, Docker.
 
 ## Módulo 2 — A web e a primeira API
 
+**Modo:** `mao`
+
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
 | M02-A01 | Como a web funciona: HTTP, URL, JSON, verbos | Arquivo `curso/anotacoes-http.md` escrito pelo aluno com os verbos e status codes com suas palavras | Arquivo existe e cita GET, POST, PUT, DELETE, 200, 201, 400, 404 |
@@ -42,6 +61,8 @@ a partir do Módulo 3, Docker.
 | M02-A05 | Validação básica | POST/PUT rejeitam nome vazio e preço ≤ 0 com 400 e mensagem clara | Request inválido retorna 400 com a mensagem |
 
 ## Módulo 3 — Banco de dados com Entity Framework Core
+
+**Modo:** `misto`
 
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
@@ -54,6 +75,8 @@ a partir do Módulo 3, Docker.
 
 ## Módulo 4 — Organizando o código (quando o arquivo único começa a doer)
 
+**Modo:** `misto`
+
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
 | M04-A01 | Por que organizar: sentindo a dor | Aluno lista em `curso/anotacoes-organizacao.md` 3 problemas do `Program.cs` atual | Arquivo existe com 3 itens |
@@ -65,6 +88,8 @@ a partir do Módulo 3, Docker.
 
 ## Módulo 5 — Testes de unidade
 
+**Modo:** `misto`
+
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
 | M05-A01 | Por que testar e o primeiro teste | `tests/LabStore.UnitTests` (xUnit) com um teste da classe `Produto` | `dotnet test` passa |
@@ -73,6 +98,8 @@ a partir do Módulo 3, Docker.
 | M05-A04 | Testes de validação | Testes dos validators | `dotnet test` passa |
 
 ## Módulo 6 — MediatR e CQRS
+
+**Modo:** `agente`
 
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
@@ -83,6 +110,8 @@ a partir do Módulo 3, Docker.
 
 ## Módulo 7 — Dapper e relatórios
 
+**Modo:** `agente`
+
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
 | M07-A01 | SQL na mão com Dapper | `GET /relatorios/vendas-por-categoria` com Dapper e parâmetros | Retorna totais por categoria |
@@ -91,6 +120,8 @@ a partir do Módulo 3, Docker.
 
 ## Módulo 8 — Cache com Redis
 
+**Modo:** `agente`
+
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
 | M08-A01 | O que é cache e quando usar | Redis no `docker-compose.yml`; `IDistributedCache` configurado | `docker compose ps` mostra o Redis |
@@ -98,6 +129,8 @@ a partir do Módulo 3, Docker.
 | M08-A03 | Idempotência | Header `Idempotency-Key` no POST de pedidos guardado no Redis | Dois POSTs com a mesma chave criam só 1 pedido |
 
 ## Módulo 9 — Mensageria com RabbitMQ
+
+**Modo:** `agente`
 
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
@@ -108,6 +141,8 @@ a partir do Módulo 3, Docker.
 
 ## Módulo 10 — Busca com Elasticsearch
 
+**Modo:** `agente`
+
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
 | M10-A01 | Busca de verdade vs `LIKE` | Elasticsearch e Kibana no compose; índice `produtos` com mapeamento | Índice existe (`GET /produtos/_mapping` no Kibana) |
@@ -115,6 +150,8 @@ a partir do Módulo 3, Docker.
 | M10-A03 | Endpoint de busca | `GET /busca/produtos?q=` com tolerância a erro de digitação e filtro de preço | Busca com uma letra trocada ainda encontra o produto |
 
 ## Módulo 11 — Inteligência artificial com LLM (OpenRouter)
+
+**Modo:** `agente`
 
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
@@ -125,6 +162,8 @@ a partir do Módulo 3, Docker.
 
 ## Módulo 12 — MCP: a API como ferramenta para agentes
 
+**Modo:** `agente`
+
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |
 | M12-A01 | O que é MCP | `curso/anotacoes-mcp.md` do aluno explicando tool e resource com suas palavras | Arquivo existe |
@@ -132,6 +171,8 @@ a partir do Módulo 3, Docker.
 | M12-A03 | Usando no seu agente | MCP server conectado no editor/agente do aluno; tool `criar_pedido` | O agente cria um pedido pela tool e ele aparece no banco |
 
 ## Módulo 13 — Juntando tudo
+
+**Modo:** `agente`
 
 | ID | Aula | Entrega | Checkpoint |
 | --- | --- | --- | --- |

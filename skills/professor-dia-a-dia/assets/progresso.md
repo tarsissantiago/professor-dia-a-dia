@@ -8,6 +8,8 @@ iniciado_em: AAAA-MM-DD
 ultima_atualizacao: AAAA-MM-DD
 modulo_atual: 0
 aula_atual: M00-A01
+modo: mao
+etapa: mao
 estado: aula-em-andamento
 ---
 
