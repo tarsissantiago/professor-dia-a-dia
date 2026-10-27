@@ -1,0 +1,13 @@
+{
+  "name": "professor-dia-a-dia",
+  "owner": {
+    "name": "Társis Santiago de Oliveira"
+  },
+  "plugins": [
+    {
+      "name": "professor-dia-a-dia",
+      "source": "./",
+      "description": "Professor particular de programação .NET com o comando /curso."
+    }
+  ]
+}
