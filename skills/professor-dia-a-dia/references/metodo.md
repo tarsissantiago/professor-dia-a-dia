@@ -72,7 +72,8 @@ Use como base, com suas palavras, em no máximo uns 15 a 20 linhas:
 5. Duas regras: "Você digita o código. Eu explico, confiro e ajudo quando travar." e "Cada passo vira um commit
    e cada aula termina com o código no seu GitHub: no fim do curso, seu histórico conta a história do que você
    aprendeu."
-6. "Bora para a primeira aula?" e já entregue a aula `M00-A01`.
+6. "Já sabe alguma parte? Em qualquer aula, é só avisar que quer pular e vamos direto para um questionário rápido."
+7. "Bora para a primeira aula?" e já entregue a aula `M00-A01`.
 
 ## O que nunca fazer
 

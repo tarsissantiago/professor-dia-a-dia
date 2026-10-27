@@ -28,7 +28,7 @@ Leia sob demanda, não tudo de uma vez:
 ## Regra de ouro: não pergunte, leia o estado
 
 O comando `/curso` **nunca começa com perguntas** ("qual seu nível?", "onde parou?").
-O estado está em arquivos. Leia, decida e aja. Perguntas ao aluno só existem nas **avaliações de fim de módulo**,
+O estado está em arquivos. Leia, decida e aja. Perguntas ao aluno só existem nas **avaliações de fim de módulo** e nos **questionários de pulo**,
 que ficam salvas em arquivo.
 
 ## O que o `/curso` faz
@@ -92,6 +92,8 @@ em tudo o que mostrar ao aluno. Registre em `sistema:` no progresso.
 
 **Caso F — `estado: reforco`:** trate como o Caso C para a aula de reforço.
 
+**Caso H — `estado: questionario-pulo`:** corrija o questionário de pulo (veja "Pular aula ou módulo").
+
 **Caso G — `estado: concluido`:** parabenize, mostre um resumo do que ele construiu (módulos, avaliações, evolução) e apresente a trilha avançada listada no fim de `references/curriculo.md`.
 
 ### 3. Sempre termine assim
@@ -111,6 +113,32 @@ No chat, apresente a aula inteira (é a primeira leitura) e lembre que ela fica 
 
 Adapte a aula ao aluno usando `Pontos a reforçar` e as `tentativas` registradas: se ele travou muito no último
 módulo, explique com mais exemplos e passos menores; se está voando, passos maiores e um desafio mais puxado.
+
+## Pular aula ou módulo
+
+O aluno pode pular qualquer aula que acha que já sabe. Ele avisa do jeito que quiser: `/curso pular`,
+"quero pular essa aula", "já sei isso", "pula o módulo". **Avise isso** na apresentação (Caso A) e no fim de toda aula
+(o `assets/aula.md` já traz o aviso).
+
+Pular nunca é só pular: ele vai direto para um **questionário** que prova que o conteúdo já está dominado.
+
+**Pular aula:**
+
+1. Gere `curso/avaliacoes/MXX-AYY-pulo.md` a partir de `assets/avaliacao.md`, com 3 ou 4 perguntas só daquela aula,
+   sendo uma delas a **entrega da aula** feita no projeto (o código da aula seguinte depende dela).
+   Se a entrega já existe no repositório, troque essa pergunta por uma de leitura de código.
+2. Estado `questionario-pulo`, `aula_atual` continua sendo a aula pulada. Diga ao aluno para responder e rodar `/curso`.
+3. Na correção (Caso H), escreva o feedback no próprio arquivo, como numa avaliação de módulo.
+   - **60 ou mais:** aula marcada como `pulada (questionário)` com a nota, commit da entrega conferido como no Caso C, e
+     a próxima aula é gerada.
+   - **Abaixo de 60:** sem bronca. Diga o que faltou, volte o estado para `aula-em-andamento` e gere (ou reapresente) a
+     aula, destacando no início os pontos que ele errou.
+
+**Pular módulo inteiro:** vá direto para a avaliação do módulo (Caso D), com a pergunta prática cobrindo a entrega mais
+importante do módulo. Aprovado, todas as aulas viram `pulada (avaliação)` e o curso segue para o próximo módulo.
+Reprovado, ele começa o módulo pela primeira aula cujo assunto errou.
+
+Registre todo pulo no Diário. Se ele pular e reprovar duas vezes seguidas, sugira, uma vez e com leveza, fazer as aulas.
 
 ## Git e GitHub em toda aula
 

@@ -15,6 +15,8 @@ aberto [Agent Skills](https://agentskills.io) (`SKILL.md`).
   onde você parou. Repositório vazio? Ele se apresenta e começa a primeira aula.
 - **Ele confere de verdade.** Ao rodar `/curso` de novo, o professor verifica o checkpoint da aula (compila, roda,
   chama a API) antes de liberar a próxima.
+- **Já sabe? Pule.** Em qualquer aula, digite `/curso pular` (ou só avise que quer pular) e vá direto para um
+  questionário rápido. Passou, a aula conta como feita. Também dá para pular um módulo inteiro.
 - **Git e GitHub desde o primeiro dia.** O Módulo 0 cria o repositório e faz o primeiro push. Depois, cada passo da
   aula vira um commit e cada aula termina com `git push`: o professor só fecha a aula com o código no GitHub.
 - **Avaliação no fim de cada módulo**, num arquivo que você responde com suas palavras. O professor corrige ali

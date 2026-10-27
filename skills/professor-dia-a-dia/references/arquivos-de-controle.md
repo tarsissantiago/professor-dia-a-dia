@@ -33,13 +33,14 @@ para o aluno.
 | `ultima_atualizacao` | `AAAA-MM-DD` | atualize a cada `/curso` |
 | `modulo_atual` | número | |
 | `aula_atual` | ID, ex. `M02-A03` ou `M02-R1` | |
-| `estado` | `aula-em-andamento`, `avaliacao-pendente`, `reforco`, `concluido` | escolhe o caso no `SKILL.md` |
+| `estado` | `aula-em-andamento`, `avaliacao-pendente`, `questionario-pulo`, `reforco`, `concluido` | escolhe o caso no `SKILL.md` |
 
 ### Corpo
 
 1. **Resumo** — 2 ou 3 linhas para o aluno: em que módulo está, quantas aulas concluiu, próxima ação.
 2. **Aulas** — tabela: `ID | Aula | Estado | Tentativas | Concluída em`.
-   Estados: `pendente`, `em andamento`, `concluída`, `pulada (já existia)`.
+   Estados: `pendente`, `em andamento`, `concluída`, `pulada (já existia)`, `pulada (questionário)`,
+   `pulada (avaliação)`. Nas puladas por questionário, anote a nota na coluna de tentativas (ex.: `pulo: 80`).
    Só liste as aulas do módulo atual e dos anteriores; as futuras não aparecem.
 3. **Avaliações** — tabela: `Módulo | Arquivo | Nota | Data`.
 4. **Pontos fortes** — bullets curtos, atualizados após cada avaliação.
@@ -52,6 +53,11 @@ para o aluno.
 
 Modelo em `assets/aula.md`. Nome em minúsculas, sem acento, com hífens. Aula de reforço: `MXX-R1-...`.
 Uma vez gerada, a aula **não é reescrita** (é a apostila). Correções vão numa seção `Nota do professor` no fim.
+
+## Questionário de pulo — `curso/avaliacoes/MXX-AYY-pulo.md`
+
+Mesmo modelo e mesmas regras de correção da avaliação de módulo, só que menor: 3 ou 4 perguntas da aula pulada,
+uma delas a entrega prática da aula. Aprovação a partir de 60 pontos.
 
 ## Avaliação — `curso/avaliacoes/modulo-XX.md`
 

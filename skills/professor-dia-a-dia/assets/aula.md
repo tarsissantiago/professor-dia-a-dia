@@ -72,3 +72,8 @@ E digite **`/curso`** para o professor conferir e liberar a próxima aula.
 ## 🚀 Desafio (opcional)
 
 Uma pequena extensão para quem quiser ir além. Não conta para o checkpoint.
+
+---
+
+> ⏭️ **Já sabe isso?** É só avisar: digite `/curso pular` (ou escreva "quero pular essa aula") e vamos direto para um
+> questionário rápido. Passou, a aula conta como feita. Dá para pular o módulo inteiro do mesmo jeito.
